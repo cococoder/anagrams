@@ -10,26 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_18_042852) do
+ActiveRecord::Schema.define(version: 2018_10_18_064931) do
 
-  create_table "characters", force: :cascade do |t|
-    t.string "value"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "word_characters", force: :cascade do |t|
-    t.integer "word_id"
-    t.integer "character_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["character_id"], name: "index_word_characters_on_character_id"
-    t.index ["word_id"], name: "index_word_characters_on_word_id"
-  end
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "words", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "length"
+    t.string "characters"
   end
 
 end
