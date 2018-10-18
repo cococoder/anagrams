@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails anagram: production" uuid="394e4f0c-50cb-4221-b46d-eb4faee791c6">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" family="POSTGRES" exact-version="0.0" />
+      <user-name>anagram</user-name>
+    </data-source>
+    <data-source name="Rails anagram: development" uuid="f413cd64-6c89-4016-9118-2547b8317264">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" family="POSTGRES" exact-version="0.0" />
+      <first-sync>true</first-sync>
+    </data-source>
+    <data-source name="Rails anagram: test" uuid="9a6ab0af-9f08-4c04-b6ac-95f5f725a180">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" family="POSTGRES" exact-version="0.0" />
+    </data-source>
+  </component>
+</project>

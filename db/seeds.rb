@@ -7,11 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 File.open("db/wordlist.txt") do |file|
   file.lines.each do | line|
-    word = Word.create
-    puts "#{line}"
-    line.split("").each do |letter|
-      character = Character.find_or_create_by value: letter
-      WordCharacter.create word: word, character: character
-    end
-  endexit
+    Word.create characters: line.strip!, length: line.length
+    puts "#{line} - ok"
+  end
 end

@@ -1,9 +1,16 @@
 require 'test_helper'
 
 class Api::EndpointControllerTest < ActionDispatch::IntegrationTest
+  test "given nothing should get back empty array" do
+    get api_endpoint_index_url
+    result = JSON.parse(@response.body)
+    assert_equal"NoAnagramGivenError", result["error"]
+  end
+
   test "given crepitus should get back cuprites,pictures,piecrust" do
     get api_endpoint_index_url, params: {anagrams: "crepitus"}
     actual = JSON.parse(@response.body)
+    p  JSON.parse(@response.body)
     ["cuprites","pictures","piecrust"].each do |word|
       assert_includes actual["crepitus"], word
     end
@@ -18,6 +25,7 @@ class Api::EndpointControllerTest < ActionDispatch::IntegrationTest
   test "given crepitus,paste,kinship should get a result for each anagram" do
     get api_endpoint_index_url, params: {anagrams: "crepitus,paste,kinship"}
     actual = JSON.parse(@response.body)
+    p actual
     assert_equal 3,actual.keys.count
   end
 
