@@ -7,10 +7,9 @@ class Api::EndpointController < ApplicationController
     render json: result
   end
 
-  def get_anagrams key
-    data = {}
-    data["crepitus"] = ["cuprites","pictures","piecrust"]
-    data["sdfwehrtgegfg"] = []
-    data[key]
+  def get_anagrams anagram
+    Word.where(length: anagram.length).
+        to_a.select{|word| word.is_anagram_of? anagram}
+        .map(&:characters)
   end
 end
