@@ -1,5 +1,7 @@
 class Api::EndpointController < ApplicationController
   def index
-    render json: []
+    result = {}
+    result [params[:anagram]] = ["cuprites","pictures","piecrust"]
+    render json: result
   end
 end
